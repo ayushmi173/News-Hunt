@@ -5,30 +5,45 @@ import { Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import Footer from "./Footer";
 import Header from "./Header";
+// import { useDispatch } from "react-redux";
+
 
 function AxiosFile() {
   const [data, setData] = useState([]);
   const [Loading, setLoading] = useState(false);
   const clickedVal = useSelector((state) => state.clickedValue);
 
+  // const dispatch = useDispatch();
+ 
   useEffect(() => {
+
     const getData = async () => {
+
       await axios
         .get(
-          `http://newsapi.org/v2/everything?q=${clickedVal}&from=2020-10-26&sortBy=publishedAt&apiKey=5753bb19f4884a16b2259e427b72356f`
+          `http://newsapi.org/v2/everything?q=${clickedVal}&from=2020-10-27&sortBy=publishedAt&apiKey=bab5fbcb40754b61977713d67530ce82`
         )
         .then((response) => {
+
           setData(response.data.articles);
+
+          // dispatch({ type: "SET-FETCH-DATA", payload: response.data.articles });
+          
+
           setTimeout(() => {
             setLoading(true);
           }, 2000);
+
         })
         .catch((error) => {
           console.log(error);
         });
     };
+
     getData();
+
   }, [clickedVal]);
+
 
   return (
     <div className="grid">
@@ -36,7 +51,7 @@ function AxiosFile() {
         data.map((item, index) => {
           return (
             <>
-            {index === 0  ? <Header /> : <></>}
+              {index === 0 ? <Header /> : <></>}
               <div key={+new Date() + Math.random()}>
                 <ShowNews
                   id={index}

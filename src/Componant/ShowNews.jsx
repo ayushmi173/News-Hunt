@@ -14,7 +14,7 @@ const ShowNews = (props) => {
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>{props.description}</Card.Text>
-          <Button variant="light" onClick={() => window.open(`${props.url}`)}>
+          <Button className="button" onClick={() => window.open(`${props.url}`)}>
             Read More
           </Button>
         </Card.Body>

@@ -3,15 +3,17 @@ import AxiosFile from "./AxiosFile";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFootballBall } from "@fortawesome/free-solid-svg-icons";
-import { faNetworkWired } from "@fortawesome/free-solid-svg-icons";
-import { faTransgender } from "@fortawesome/free-solid-svg-icons";
-import { faFlask } from "@fortawesome/free-solid-svg-icons";
-import { faGlobeAfrica } from "@fortawesome/free-solid-svg-icons";
-import { faVoteYea } from "@fortawesome/free-solid-svg-icons";
-import { faGlassCheers } from "@fortawesome/free-solid-svg-icons";
-import { faCloudSunRain } from "@fortawesome/free-solid-svg-icons";
-import { faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFootballBall,
+  faHandHoldingUsd,
+  faCloudSunRain,
+  faNetworkWired,
+  faTransgender,
+  faFlask,
+  faGlobeAfrica,
+  faVoteYea,
+  faGlassCheers,
+} from "@fortawesome/free-solid-svg-icons";
 
 const MainCard = (props) => {
   let element = "";
@@ -38,6 +40,7 @@ const MainCard = (props) => {
   const dispatch = useDispatch();
   const searchValue = props.name;
   const cardCalling = () => {
+    // console.log("Search Value in maincard: " + searchValue)
     return (
       <>
         {dispatch({ type: "SET_BUTTON_CLICKED", payload: searchValue })}
@@ -48,16 +51,12 @@ const MainCard = (props) => {
 
   return (
     <>
-      <Link to="news">
-        <div
-          className="main-card  text-center "
-          style={{ backgroundColor: `${props.color}` }}
-          onClick={() => cardCalling()}
-        >
+      <Link to="News">
+        <div className="main-card  text-center " onClick={() => cardCalling()}>
           <div>
             <div>{element}</div>
-            <div> {props.name}</div>
           </div>
+          <h3> {props.name}</h3>
         </div>
       </Link>
     </>
