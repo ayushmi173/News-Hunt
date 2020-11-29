@@ -3,6 +3,7 @@ import MainCard from "./MainCard";
 import { useId } from "react-id-generator";
 import Footer from "./Footer";
 import Header from "./Header";
+
 const CardsUI = () => {
   const [htmlId] = useId();
   const CardData = [

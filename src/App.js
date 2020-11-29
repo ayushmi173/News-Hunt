@@ -1,4 +1,5 @@
 import "./App.css";
+import  "./Componant/Componants.css"
 import CardsUI from "./Componant/CardsUI";
 import AxiosFile from "./Componant/AxiosFile";
 import { Route, Switch } from "react-router-dom";
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
       <Switch>
-        <Route exact path="/News-Hunt" component={CardsUI} />
+        <Route exact path="/" component={CardsUI} />
         <Route exact path="/News" component={AxiosFile} />
         <Route extact path ="/Catagory/Sports" component ={ShowNewsHeading} />
         <Route extact path ="/Catagory/Politics" component ={ShowNewsHeading} />

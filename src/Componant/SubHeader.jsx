@@ -2,7 +2,6 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import AxiosFile from "./AxiosFile";
 import ShowNewsHeading from "./ShowNewsHeading";
 
 const SubHeader = () => {
@@ -24,7 +23,7 @@ const SubHeader = () => {
         activeKey="/News-Hunt"
       >
         <Nav.Item>
-          <NavLink to="/News-Hunt">Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </Nav.Item>
         <Nav.Item>
           <NavLink
